@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# install zsh
-sudo apt install zsh
+sudo apt update
+
+# basic utilities
+sudo apt-get install git curl zsh file build-essential fzf mosh man-db
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -14,11 +16,18 @@ sudo mv /usr/local/bin/rmate /usr/local/bin/rsubl
 # install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
+# install thefuck
+sudo apt install python3-dev python3-pip python3-setuptools
+sudo pip3 install thefuck
+
+# install zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 # copy custom aliases and functions into .zshrc
 cat .zshrc >> ~/.zshrc
 
-
-## post installation setup
+## ---- post installation setup
 source ~/.zshrc
 
 # install and use latest lts node
