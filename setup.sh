@@ -3,7 +3,7 @@
 sudo apt update
 
 # basic utilities
-sudo apt-get install git curl zsh file build-essential fzf mosh man-db fonts-powerline
+sudo apt-get install git curl zsh file build-essential fzf man-db fonts-powerline
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -34,3 +34,5 @@ source ~/.zshrc
 # install and use latest lts node
 nvm install --lts
 nvm use --lts
+
+npm install -g script-list lerna typescript ts-node prettier auditjs http-server
