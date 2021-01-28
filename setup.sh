@@ -2,8 +2,8 @@
 
 sudo apt update
 
-# basic utilities
-sudo apt-get install git curl zsh file build-essential fzf man-db fonts-powerline
+# basic utilities and preferred tools
+sudo apt-get install git curl zsh file build-essential fzf man-db fonts-powerline sysvbanner fortune
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -23,10 +23,12 @@ sudo pip3 install thefuck
 # install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # copy custom aliases and functions into .zshrc
-cat .zshrc >> ~/.zshrc
+mv ~/.zshrc ~/.zshrc-default
+cp .zshrc ~/.zshrc
+cp .p10k.zsh ~/.p10k.zsh
 
 ## ---- post installation setup
 source ~/.zshrc
@@ -35,4 +37,5 @@ source ~/.zshrc
 nvm install --lts
 nvm use --lts
 
+# preferred node utilities and global installs
 npm install -g script-list lerna typescript ts-node prettier auditjs http-server
