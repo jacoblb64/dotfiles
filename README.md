@@ -2,7 +2,7 @@
 
 ### Instructions
 * clone this repo
-* `export NEW_USER=`*`[username]`*
+* `export NEW_USER=[username]`
 * run `./root-setup.sh` to create that new user and set some basic stuff
 * Switch to that new user
 * generate an ssh key for the new user with `ssh-keygen`
