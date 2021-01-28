@@ -1,6 +1,6 @@
 # dotfiles
 
-## Instructions
+### Instructions
 * clone this repo
 * `export NEW_USER=`*`[username]`*
 * run `./root-setup.sh` to create that new user and set some basic stuff
