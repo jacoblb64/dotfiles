@@ -11,3 +11,6 @@ usermod -aG sudo $NEW_USER
 sed -i s/NEW_USER/$NEW_USER/g .zshrc
 
 cat ~/.ssh/authorized_keys >> /home/$NEW_USER/.ssh/authorized_keys
+
+cp banner.txt /etc/ssh/sshd_banner
+sed -i "s/\#Banner none/Banner \/etc\/ssh\/sshd_banner/g" /etc/ssh/sshd_config
